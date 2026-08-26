@@ -30,4 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
         appsGrid.appendChild(appLink);
     });
 
+    // move footer text to the bottom of the page, not screen, if the content is short
+    const footer = document.querySelector(".footer");
+    const mainContent = document.querySelector("main");
+    if (mainContent.offsetHeight + footer.offsetHeight < window.innerHeight) {
+        footer.style.position = "absolute";
+        footer.style.bottom = "0";
+        footer.style.width = "100%";
+    }
 });
